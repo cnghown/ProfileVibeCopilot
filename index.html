@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cnghown - bugs</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+
+<body>
+    <div class="background-animation"></div>
+    <div class="petals-container"></div>
+    <div class="cursor-trail"></div>
+    <div class="container">
+        <header class="header">
+            <div class="online-status">
+                <span class="status-dot"></span>
+                <code class="status-code">printf('online');</code>
+            </div>
+
+            <!-- AVATAR PROFILE -->
+            <div class="avatar-container">
+                <div class="avatar-wrapper">
+                    <img src="/assets/img/mong-vuot-rong.png" alt="Dragon Wing" class="avatar-decoration">
+                    <img src="/assets/img/hoandz.jpg" alt="Profile Avatar" class="avatar-image">
+                </div>
+            </div>
+
+            <div class="title-with-badge">
+                <code
+                    class="title-code"><span class="error">console.error(</span><span class="name">'Bùi Công Hoan'</span><span class="error">)</span></code>
+                <img src="/assets/img/tick.png" alt="Verified" class="verified-badge">
+            </div>
+            <p class="subtitle"><code class="subtitlee-code">debug('Backend Developer • Vibe coding');</code>
+            </p>
+            <p class="subtitle">
+                <code
+                    class="subtitle-code"><span class="keyword">if</span>( <span class="error">error || sleepy || bored</span> ) {<br>&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">"Vibe Copilot Ultra"</span>;<br>}</code>
+            </p>
+        </header>
+        <nav class="nav-menu">
+            <button class="nav-btn active" onclick="showTab('about')" title="About"><i class="fas fa-user"></i>
+                <code>about()</code></button>
+            <button class="nav-btn" onclick="showTab('skills')" title="Skills"><i class="fas fa-code"></i>
+                <code>skills()</code></button>
+            <button class="nav-btn" onclick="showTab('projects')" title="Projects"><i class="fas fa-clone"></i>
+                <code>projects()</code></button>
+            <button class="nav-btn" onclick="showTab('myjob')" title="My Job"><i class="fas fa-briefcase"></i>
+                <code>myJob()</code></button>
+            <button class="nav-btn" onclick="showTab('contact')" title="Contact"><i class="fas fa-envelope"></i>
+                <code>contact()</code></button>
+        </nav>
+
+        <!-- MUSIC NOTIFICATION -->
+        <div class="music-notification" id="musicNotification">
+            <div class="music-notif-content">
+                <div class="music-notif-icon"><img src="assets/img/logonhac.gif" width="45"></div>
+                <div class="music-notif-text">
+                    <p>Bạn có muốn phát nhạc khi xem không?</p>
+                </div>
+                <div class="music-notif-buttons">
+                    <button class="notif-btn yes-btn" onclick="acceptMusic()">Có</button>
+                    <button class="notif-btn no-btn" onclick="rejectMusic()">Không</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MUSIC PLAYER -->
+        <div class="music-player" id="musicPlayer">
+            <div class="music-player-header">
+                <h3>🎵 Now Playing</h3>
+                <button class="close-music" onclick="toggleMusicPlayer()">✕</button>
+            </div>
+            <audio id="audioPlayer" controls style="width: 100%; margin: 10px 0;">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Browser không hỗ trợ audio
+            </audio>
+            <div class="music-info">
+                <p id="musicTitle">🎶 Now Playing...</p>
+            </div>
+            <div class="music-playlist" style="display: none;">
+            </div>
+        </div>
+        <main class="content">
+            <section id="about" class="section active">
+                <div class="code-block">
+                    <div class="code-header">
+                        <div class="dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="filename">about.ts</span>
+                    </div>
+                    <pre><code class="language-typescript">const developer = {
+  name: "Bùi Công Hoan",
+  role: "Backend Developer",
+  experience: "Vibe coding",
+  location: "Vietnam",
+  passion: "Building scalable systems",
+  hobbies: ["Coding", "Learning", "Contributing"]
+};</code></pre>
+                </div>
+
+                <div class="code-block mt-3">
+                    <div class="code-header">
+                        <div class="dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="filename">introduction.ts</span>
+                    </div>
+                    <pre><code class="language-typescript">const introduction = {
+  title: "My Introduction",
+  bio_Hoan:  `Though I am ordinary among many.
+        I am still the one and only in this world!`,
+  content: `I'm a Web backend student passionate about coding.
+            Want to gain experience and help the Vietnamese 
+            Developer Community through innovative my projects.`,
+  goals: ["Learn", "Grow", "Contribute", "Inspire"]
+};</code></pre>
+                </div>
+                <div class="code-block mt-3">
+                    <div class="code-header">
+                        <div class="dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="filename">developer.php</span>
+                    </div>
+                    <pre><code class="language-php">&lt;?php
+
+class Developer {
+    public $name = "Bùi Công Hoan";
+    public $role = "Backend Developer";
+    private $skills = ["PHP", "Laravel", "MySQL"];
+    
+    public function introduce() {
+        echo "Hello from PHP! I'm " . $this-&gt;name;
+    }
+    
+    public function getSkills() {
+        return $this-&gt;skills;
+    }
+}
+
+$dev = new Developer();
+$dev-&gt;introduce();
+?&gt;</code></pre>
+                </div>
+                <div class="code-block mt-3">
+                    <div class="code-header">
+                        <div class="dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="filename">hello.py</span>
+                    </div>
+                    <pre><code class="language-python">def hello_world():
+    developer = {
+        "name": "Bùi Công Hoan",
+        "message": "Passionate about backend development"
+    }
+    print(f"Hello! I'm {developer['name']}")
+    return developer
+
+if __name__ == "__main__":
+    hello_world()</code></pre>
+                </div>
+
+                <div class="code-block mt-3">
+                    <div class="code-header">
+                        <div class="dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="filename">Developer.java</span>
+                    </div>
+                    <pre><code class="language-java">public class Developer {
+    private String name = "Bùi Công Hoan";
+    private String role = "Backend Developer";
+    private String[] skills = {"Java", "Spring", "MySQL"};
+    
+    public void introduce() {
+        System.out.println("Hello from Java! My name is " + name);
+    }
+    
+    public static void main(String[] args) {
+        Developer dev = new Developer();
+        dev.introduce();
+    }
+}</code></pre>
+                </div>
+
+                <div class="code-block mt-3">
+                    <div class="code-header">
+                        <div class="dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="filename">developer.go</span>
+                    </div>
+                    <pre><code class="language-go">package main
+
+import "fmt"
+
+type Developer struct {
+    Name   string
+    Role   string
+    Skills []string
+}
+
+func main() {
+    dev := Developer{
+        Name: "Bùi Công Hoan",
+        Role: "Backend Developer",
+        Skills: []string{"Go", "Docker", "Kubernetes"},
+    }
+    fmt.Printf("Hello from Go! I'm %s\n", dev.Name)
+}</code></pre>
+                </div>
+
+                <div class="code-block mt-3">
+                    <div class="code-header">
+                        <div class="dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="filename">developer.rb</span>
+                    </div>
+                    <pre><code class="language-ruby">class Developer
+  attr_accessor :name, :role, :skills
+
+  def initialize(name, role)
+    @name = name
+    @role = role
+    @skills = ["Ruby", "Rails", "PostgreSQL"]
+  end
+
+  def introduce
+    puts "Hello from Ruby! I'm #{@name}, a #{@role}"
+  end
+end
+
+dev = Developer.new("Bùi Công Hoan", "Backend Developer")
+dev.introduce</code></pre>
+                </div>
+            </section>
+            <section id="skills" class="section">
+                <div class="skills-grid">
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="filename">skills.ts</span>
+                        </div>
+                        <pre><code class="language-typescript">interface Skills {
+  languages: string[];
+  technologies: string[];
+  platforms: string[];
+}</code></pre>
+                    </div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="filename">languages.ts</span>
+                        </div>
+                        <pre><code class="language-typescript">const languages = [
+  "JavaScript",
+  "Python",
+  "Java",
+  "TypeScript",
+  "SQL",
+  "Laravel",
+  "HTML/CSS",
+  "Tailwind CSS"
+];</code></pre>
+                    </div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="filename">tools.ts</span>
+                        </div>
+                        <pre><code class="language-typescript">const tools = [
+  "Node.js",
+  "Docker",
+  "MongoDB",
+  "MySQL",
+  "Git",
+  "Linux",
+  "VS Code",
+  "Postman"
+];</code></pre>
+                    </div>
+                </div>
+            </section>
+            <section id="projects" class="section">
+                <div id="projectList" class="projects-grid"></div>
+            </section>
+            <section id="myjob" class="section">
+                <div class="contact-container">
+                    <p class="contact-text">🎮 My Creations & Services</p>
+                    <div class="projects-grid">
+                        <div class="code-block">
+                            <div class="code-header">
+                                <div class="dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <span class="filename">myCreations.php | GameNRO.java | ZaloBot.js</span>
+                            </div>
+
+                            <div style="display: flex; gap: 8px; margin-bottom: 8px; width: 100%;">
+                                <img src="assets/img/web.png" alt="Web Game"
+                                    style="flex: 1; max-height: 220px; border-radius: 6px; object-fit: cover;">
+                                <img src="assets/img/nro.png" alt="Game NRO"
+                                    style="flex: 1; max-height: 220px; border-radius: 6px; object-fit: cover;">
+                                <img src="assets/img/botzalo.png" alt="Zalo Bot"
+                                    style="flex: 1; max-height: 220px; border-radius: 6px; object-fit: cover;">
+                            </div>
+
+                            <pre><code class="language-php">// 🎮 WEB GAME - PHP
+class WebGameSystem {
+    public function getFeatures() {
+        return ["Auto Bank", "Admin Panel", "Comments", "Posts", "Giftcodes"];
+    }
+}
+
+// 🎮 GAME NRO - JAVA
+class GameNRO {
+    private String[] features = [
+        "Chức năng mới lạ", "Res đẹp", "Option all", "No bugs"
+    ];
+    public void initGame() { System.out.println("🎮 NRO Ready!"); }
+}
+
+// 🤖 ZALO BOT - NODE.JS
+class ZaloBotManager {
+    constructor() {
+        this.features = ["Anti-Link", "Anti-Spam", "Auto-Ads", "Entertainment"];
+    }
+    startBotService() { console.log("🤖 Bot Started!"); }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="section">
+                <div class="contact-container">
+                    <p class="contact-text">Let's connect & collaborate 🚀</p>
+                    <div class="contact-grid">
+                        <div class="code-block">
+                            <div class="code-header">
+                                <div class="dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <span class="filename">github.js</span>
+                            </div>
+                            <pre><code class="language-javascript">// My GitHub Profile
+const github = {
+  username: "cnghown",
+  url: "https://github.com/cnghown",
+  contributions: "Active"
+};
+
+console.log("Visit my GitHub: " + github.url);</code></pre>
+                        </div>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <div class="dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <span class="filename">contact.py</span>
+                            </div>
+                            <pre><code class="language-python"># My Contact Information
+email = "hoandeptrai61@gmail.com"
+facebook = "https://www.facebook.com/conghoan61/"
+name = "Bui Cong Hoan"
+
+def send_message():
+    print(f"Hello {name}! Email sent to {email}")
+    return True
+
+# Feel free to reach out!
+send_message()</code></pre>
+                        </div>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <div class="dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <span class="filename">email.php</span>
+                            </div>
+                            <pre><code class="language-php">&lt;?php
+// Send me an email
+$sender = [
+    "email" => "hoandeptrai61@gmail.com",
+    "name" => "Bùi Công Hoan",
+    "message" => "Let's collaborate!"
+];
+
+echo "Email: " . $sender["email"];
+echo "Contact me anytime!";
+?&gt;</code></pre>
+                        </div>
+                    </div>
+                    <div class="direct-contact">
+                        <p style="margin-top: 40px; font-size: 16px; color: #a0aec0;">📧 Email: <a
+                                href="mailto:hoandeptrai61@gmail.com"
+                                style="color: #a855f7; text-decoration: none; font-weight: 600;">hoandeptrai61@gmail.com</a>
+                        </p>
+                        <p><i class="fab fa-github" style="color: #a855f7; margin-right: 8px;"></i>GitHub: <a
+                                href="https://github.com/cnghown" target="_blank"
+                                style="color: #a855f7; text-decoration: none; font-weight: 600;">github.com/cnghown</a>
+                        </p>
+                        <p><i class="fab fa-facebook" style="color: #a855f7; margin-right: 8px;"></i>Facebook: <a
+                                href="https://www.facebook.com/conghoan61/" target="_blank"
+                                style="color: #a855f7; text-decoration: none; font-weight: 600;">Bui Cong Hoan</a></p>
+                        <p>📞 My Phone: <a href="tel:+84395134812"
+                                style="color: #a855f7; text-decoration: none; font-weight: 600;">+84 395134812</a></p>
+                        <p style="margin-top: 20px; font-size: 14px; color: #a0aec0;"><code
+                                style="color: #facc15;">function</code> <code
+                                style="color: #06b6d4;">bankTransfer</code>() { <code
+                                style="color: #06b6d4;">qrCode</code> }</p>
+                        <img src="/assets/img/qrbank.jpg" alt="QR Bank"
+                            style="max-width: 280px; height: auto; margin-top: 12px; margin-left: auto; margin-right: auto; display: block; border-radius: 6px;">
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>© 2026 Bui Cong Hoan. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
