@@ -212,7 +212,7 @@ function rejectMusic() {
 ## 🔗 Links & Info
 
 ```javascript
-const cvnghown = {
+const cnghown = {
   profile: "https://github.com/cnghown",
   portfolio: "https://github.com/cnghown/ProfileVibeCopilot",
   email: "hoandeptrai61@gmail.com",
