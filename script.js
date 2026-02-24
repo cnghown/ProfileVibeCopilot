@@ -64,10 +64,6 @@ class Logger {
 }
 
 const logger = new Logger("UI");
-
-// ============================================
-// TEST UTILITIES
-// ============================================
 function test(testName, callback) {
   try {
     callback();
@@ -82,10 +78,6 @@ function assert(condition, message) {
     throw new Error(`Assertion failed: ${message}`);
   }
 }
-
-// ============================================
-// MAIN FUNCTIONS
-// ============================================
 function showTab(id) {
   const functionNames = {
     about: "about()",
@@ -236,7 +228,6 @@ async function loadProjects() {
 document.addEventListener("DOMContentLoaded", () => {
   logger.log("====== PAGE INITIALIZATION START ======");
   try {
-    // Log profile info
     const statusCode = document.querySelector(".status-code");
     const titleCode = document.querySelector(".title-code");
     const subtitleCode = document.querySelector(".subtitle-code");
@@ -260,35 +251,24 @@ document.addEventListener("DOMContentLoaded", () => {
       firstBtn.classList.add("active");
       logger.log("Active nav button set");
     }
-
-    // Initialize falling petals
     createFallingPetals();
     logger.log("Falling petals effect initialized");
-
-    // Initialize cursor trail
     initializeCursorTrail();
     logger.log("Cursor trail effect initialized");
-
-    // Show music notification after 2 seconds
     setTimeout(showMusicNotification, 2000);
-
     logger.log("====== PAGE INITIALIZATION COMPLETE ======\n");
   } catch (error) {
     logger.error("Failed during page initialization", error);
   }
 });
-
-/* FALLING PETALS EFFECT */
 function createFallingPetals() {
   const petalsContainer = document.querySelector(".petals-container");
   if (!petalsContainer) {
     logger.warn("Petals container not found in DOM");
     return;
   }
-
   const petals = ["🌸", "🌺", "🌼", "🌻", "🌷", "🌹"];
   let petalCount = 0;
-
   function createPetal() {
     try {
       const petal = document.createElement("div");
@@ -315,14 +295,10 @@ function createFallingPetals() {
   }, 400);
 
   logger.log("Petal creation interval started", { interval: 400 });
-
-  // Cleanup on page unload
   window.addEventListener("beforeunload", () => {
     clearInterval(petalInterval);
   });
 }
-
-/* CURSOR TRAIL EFFECT */
 function initializeCursorTrail() {
   try {
     const trail = document.querySelector(".cursor-trail");
@@ -363,8 +339,6 @@ function initializeCursorTrail() {
 
     animateTrail();
     logger.log("Cursor trail animation started");
-
-    // Create particles on click
     document.addEventListener("click", (e) => {
       createClickParticles(e.clientX, e.clientY);
     });
@@ -423,8 +397,6 @@ function createClickParticles(x, y) {
     }
   }
 }
-
-/* MUSIC NOTIFICATION - Show on page load */
 function showMusicNotification() {
   try {
     const notif = document.getElementById("musicNotification");
@@ -435,8 +407,6 @@ function showMusicNotification() {
 
     notif.classList.add("active");
     logger.log("Music notification displayed");
-
-    // Auto-hide after 10 seconds
     setTimeout(() => {
       if (notif.classList.contains("active")) {
         notif.classList.remove("active");
@@ -468,8 +438,6 @@ function closeMusicPlayer() {
   const audio = document.getElementById("audioPlayer");
   audio.pause();
 }
-
-/* MUSIC PLAYER */
 const musicTracks = [
   {
     url: "/assets/nhac/Cẩm Tú Cầu Remix - QTrung Remix  Chờ Người Từ Lúc Nắng Dần Buông Remix TikTok - Val Remix.mp3",
@@ -482,6 +450,10 @@ const musicTracks = [
   {
     url: "/assets/nhac/Người Đầu Tiên - Juky San  Em Xinh Say Hi - VilnowZ.mp3",
     title: "Người Đầu Tiên - Juky San",
+  },
+  {
+    url: "/assets/nhac/Dangrangto - 'thế giới của anh' (Prod. DONAL, Lespace) [Official M_V] - Dangrangto.mp3",
+    title: "Thế Giới Của Anh - Dangrangto",
   },
 ];
 
@@ -514,8 +486,6 @@ function playMusic(url, title) {
     audio.play();
 
     logger.log("Playing music", { title, url: url.substring(0, 50) + "..." });
-
-    // Auto-play next random song when current ends
     audio.onended = function () {
       logger.log("Current track ended, loading next...");
       playRandomMusic();
@@ -535,12 +505,6 @@ function playRandomMusic() {
     logger.error("Error playing random music", error);
   }
 }
-
-// ============================================
-// GLOBAL UTILITIES & TESTING
-// ============================================
-
-// Run basic tests on page load
 window.addEventListener("load", () => {
   if (DEBUG_MODE) {
     console.log("%c🧪 RUNNING TESTS...", "color: #00ff00; font-size: 14px;");

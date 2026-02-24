@@ -29,7 +29,6 @@ body {
     min-height: 100vh;
 }
 
-/* IMAGE STYLING */
 img {
     display: block;
     border: none;
@@ -37,7 +36,6 @@ img {
     background: transparent;
 }
 
-/* BACKGROUND ANIMATION */
 .background-animation {
     position: fixed;
     top: 0;
@@ -59,7 +57,6 @@ img {
     margin: 0 auto;
 }
 
-/* HEADER */
 .header {
     text-align: center;
     margin-bottom: 60px;
@@ -117,7 +114,6 @@ img {
     }
 }
 
-/* AVATAR */
 .avatar-container {
     margin-bottom: 30px;
     animation: fadeInDown 0.8s ease 0.1s backwards;
@@ -180,7 +176,6 @@ img {
     transform: scale(1.05);
 }
 
-/* TITLE WITH BADGE */
 .title-with-badge {
     display: flex;
     align-items: center;
@@ -331,7 +326,6 @@ img {
     animation: fadeInUp 0.8s ease 0.4s backwards;
 }
 
-/* NAVIGATION */
 .nav-menu {
     display: flex;
     justify-content: center;
@@ -389,7 +383,6 @@ img {
     color: var(--accent-purple);
 }
 
-/* CONTENT SECTIONS */
 .content {
     animation: fadeIn 0.6s ease;
 }
@@ -443,7 +436,6 @@ img {
     }
 }
 
-/* CODE BLOCKS */
 .code-block {
     background: var(--code-bg);
     border: 1px solid var(--border-color);
@@ -564,12 +556,10 @@ img {
     color: #87ceeb;
 }
 
-/* UTILITIES */
 .mt-3 {
     margin-top: 30px;
 }
 
-/* SKILLS GRID */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -580,7 +570,6 @@ img {
     grid-column: 1 / -1;
 }
 
-/* PROJECTS GRID */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -614,7 +603,6 @@ img {
     align-items: center;
 }
 
-/* CONTACT */
 .contact-container {
     text-align: center;
 }
@@ -668,7 +656,6 @@ img {
     max-width: 400px !important;
 }
 
-/* FOOTER */
 .footer {
     text-align: center;
     margin-top: 60px;
@@ -678,7 +665,6 @@ img {
     font-size: 18px;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .container {
         padding: 40px 20px;
@@ -843,7 +829,6 @@ img {
     }
 }
 
-/* FALLING PETALS */
 .petals-container {
     position: fixed;
     top: 0;
@@ -890,12 +875,10 @@ img {
     animation: fall linear infinite;
 }
 
-/* CURSOR TRAIL - DISABLED */
 .cursor-trail {
     display: none !important;
 }
 
-/* MUSIC NOTIFICATION */
 .music-notification {
     position: fixed;
     top: -200px;
@@ -975,7 +958,6 @@ img {
     color: var(--accent-purple);
 }
 
-/* MUSIC PLAYER */
 .music-btn {
     background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(59, 130, 246, 0.2));
     border: 1px solid var(--accent-purple);
@@ -1090,7 +1072,6 @@ img {
     transform: translateX(5px);
 }
 
-/* MUSIC PLAYER RESPONSIVE */
 @media (max-width: 768px) {
     .music-player {
         width: 90vw;
